@@ -1,9 +1,25 @@
 Temp/
 Library/
+UnityGenerated/
+Assets/AssetsStoreTools*
+ProjectSettings/
+.vs/
+Obj/
 *.csproj
 *.sln
 *.userprefs
-.vs/
-ProjectSettings/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+ehthumbs.db
+Thumbs.db
+
+
 
 
