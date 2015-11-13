@@ -4,4 +4,5 @@ Library/
 *.sln
 *.userprefs
 .vs/
+ProjectSettings/
 
