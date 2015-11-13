@@ -5,4 +5,5 @@ Library/
 *.userprefs
 .vs/
 ProjectSettings/
+*.meta
 
