@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class SoundScript : MonoBehaviour {
+	
 	// Game volume control
 	// Determine if game sound is on and how loud it is(0-100% in form of 0-1)
 	public bool gameSoundOn = true;
@@ -17,6 +18,7 @@ public class SoundScript : MonoBehaviour {
 	public float stepCooldown = 20.0f;
 	// The starting pitch of the footsteps, this help create more realistic footsteps
 	public float footstepPitch = 1.0f;
+	public bool isJumping = false;
 
 	// Meow initialisation
 	// This allow insert of the meow audios and source them
@@ -40,6 +42,7 @@ public class SoundScript : MonoBehaviour {
 	void Start () {
 		footstepSource = GetComponent<AudioSource>();
 		meowSource = GetComponent <AudioSource>();
+	
 	}
 	
 	// Update is called once per frame
@@ -48,8 +51,12 @@ public class SoundScript : MonoBehaviour {
 		gameSoundVolume = volumeSlider.value;
 
 		if (Application.loadedLevelName == "Game") {
-			FootStep ();
+			if (!isJumping)
+			{
+				FootStep();
+			}
 			Meow ();
+			
 		}
 	}
 
@@ -129,5 +136,10 @@ public class SoundScript : MonoBehaviour {
 			// decreasing the stepCooldown per update when stepCooldown has not reached 0
 			meowCooldown--;
 		}
+	}
+
+	public void IsJumpingSetter(bool setter)
+	{
+		isJumping = setter;
 	}
 }

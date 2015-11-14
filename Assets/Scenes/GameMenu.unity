@@ -1043,7 +1043,6 @@ GameObject:
   - 4: {fileID: 1675151527}
   - 114: {fileID: 1675151526}
   - 82: {fileID: 1675151525}
-  - 82: {fileID: 1675151528}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -1060,7 +1059,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0541e937296f6ec4dbc5aa494fa6dd97, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1137,6 +1136,7 @@ MonoBehaviour:
   footstep: {fileID: 8300000, guid: 0541e937296f6ec4dbc5aa494fa6dd97, type: 3}
   stepCooldown: 5
   footstepPitch: 1
+  isJumping: 0
   meow00: {fileID: 8300000, guid: 1d40c3c7496e8a343a3003ec59af4ebe, type: 3}
   meow01: {fileID: 8300000, guid: c25d5af6cd7df3445b6c70fc079c19fb, type: 3}
   meow02: {fileID: 8300000, guid: 21f1462514f439d4c8b3d1332e66aa4b, type: 3}
@@ -1156,75 +1156,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!82 &1675151528
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1675151524}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1d40c3c7496e8a343a3003ec59af4ebe, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1 &1736195031
 GameObject:
   m_ObjectHideFlags: 0
