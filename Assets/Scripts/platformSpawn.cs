@@ -19,8 +19,10 @@ public class platformSpawn : MonoBehaviour {
         spawnCooldown--;
 	    while (spawnAmmount>0)
         { 
-            Instantiate(terrain, new Vector3(transform.position.x+offSet,transform.position.y,transform.position.z), transform.rotation);
-            spawnAmmount--;
+			GameObject platform;
+            platform = Instantiate(terrain, new Vector3(transform.position.x+offSet,transform.position.y,transform.position.z), transform.rotation) as GameObject;
+			platform.transform.localScale -= new Vector3(0,0.15f,0);
+			spawnAmmount--;
             offSet += 2.37f;
         }
 	}

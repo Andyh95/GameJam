@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		terrainGenCooldown = 0.5f;
-		platformCooldown = 80.0f;
+		platformCooldown = 120.0f;
 	}
 	
 	// Update is called once per frame
@@ -28,10 +28,11 @@ public class GameManager : MonoBehaviour {
 			int spawnLength = Random.Range(2,6);
             GameObject platform;
             platform = Instantiate(terrain, spawnPoints[spawnPos].position, spawnPoints[spawnPos].rotation) as GameObject;
+			platform.transform.localScale -= new Vector3(0,0.15f,0);
             platform.AddComponent<platformSpawn>();
             platform.GetComponent<platformSpawn>().SetSpawnAmmount(spawnLength);
             platform.GetComponent<platformSpawn>().SetObject(terrain);
-            platformCooldown = 80.0f;
+            platformCooldown = 120.0f;
 			
 
 		}
