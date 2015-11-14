@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 		backgroundGenCooldown1 = 0.0f;
 		backgroundGenCooldown2 = 0.0f;
 		backgroundGenCooldown3 = 0.0f;
-		platformCooldown = 120.0f;
+		platformCooldown = 60.0f;
 	}
 	
 	// Update is called once per frame
@@ -35,14 +35,14 @@ public class GameManager : MonoBehaviour {
 		}
 		if (platformCooldown <= 0) {
 			int spawnPos = Random.Range(0,4);
-			int spawnLength = Random.Range(2,6);
+			int spawnLength = Random.Range(2,5);
             GameObject platform;
             platform = Instantiate(terrain, spawnPoints[spawnPos].position, spawnPoints[spawnPos].rotation) as GameObject;
 			platform.transform.localScale -= new Vector3(0,0.15f,0);
             platform.AddComponent<platformSpawn>();
             platform.GetComponent<platformSpawn>().SetSpawnAmmount(spawnLength);
             platform.GetComponent<platformSpawn>().SetObject(terrain);
-			platformCooldown = 120.0f;
+			platformCooldown = 60.0f;
 		}
 		if (backgroundGenCooldown1 <= 0) {
 			Instantiate(background1, new Vector3(26.08f,0.57f,10),transform.rotation);
