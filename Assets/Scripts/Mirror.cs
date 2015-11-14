@@ -10,9 +10,11 @@ public class Mirror : MonoBehaviour {
 
         mCamera = new WebCamTexture("Camera 1");
         GetComponent<Renderer>().material.mainTexture = mCamera;
+        GetComponent<Renderer>().material.SetFloat("_Brightness", 50f);
+        GetComponent<Renderer>().material.SetFloat("_Contrast", 50f);
         mCamera.Play();
 
-        transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
+        //transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
 
     }
 	
