@@ -18,4 +18,10 @@ public class LoadLevel : MonoBehaviour {
 		Application.LoadLevel ("Game");
 		print ("level changed");
 	}
+
+	public void OnClickReturnMenu()
+	{
+		Application.LoadLevel ("GameMenu");
+		print ("level changed to game menu");
+	}
 }
