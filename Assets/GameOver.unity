@@ -599,6 +599,7 @@ MonoBehaviour:
   LotteryText: {fileID: 4900000, guid: 8f690e847ce945a4f8ce534b99e097c2, type: 3}
   MirrorText: {fileID: 4900000, guid: 9c8c58f0f56b6b248a2c5b89cbeffbdf, type: 3}
   WitchesText: {fileID: 4900000, guid: 70d48035afa269640836060bcb777911, type: 3}
+  CatText: {fileID: 4900000, guid: 2e208aa5ad03ed2438fa03dc3843197c, type: 3}
   content: {fileID: 1382997673}
 --- !u!1 &1508297813
 GameObject:

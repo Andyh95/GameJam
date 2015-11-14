@@ -14,6 +14,7 @@ public class TextLoader : MonoBehaviour {
 	public TextAsset LotteryText;
 	public TextAsset MirrorText;
 	public TextAsset WitchesText;
+	public TextAsset CatText;
 	public Text content;
 	 
 
@@ -22,7 +23,7 @@ public class TextLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		int num = Random.Range (1, 12);
+		int num = Random.Range (1, 13);
 
 		if (num == 1) {
 			content.text = beeText.text;
@@ -46,6 +47,8 @@ public class TextLoader : MonoBehaviour {
 			content.text = MirrorText.text;
 		} else if (num == 11) {
 			content.text = WitchesText.text;
+		} else if (num == 12) {
+			content.text = CatText.text;
 		}
 
 
