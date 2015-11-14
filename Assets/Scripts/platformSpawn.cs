@@ -8,6 +8,9 @@ public class platformSpawn : MonoBehaviour {
     float offSet = 2.37f;
     int spawnAmmount;
 
+	GameObject pickup;
+	bool isPickup = false;
+
 	// Use this for initialization
 	void Start () {
         spawnCooldown = 24f;
@@ -25,6 +28,10 @@ public class platformSpawn : MonoBehaviour {
 			spawnAmmount--;
             offSet += 2.37f;
         }
+		if (isPickup) {
+			Instantiate(pickup,new Vector3(transform.position.x + offSet - Random.Range(0,offSet-2.37f),transform.position.y + 1.0f, transform.position.z),transform.rotation);
+			isPickup = false;
+		}
 	}
 
     public void SetSpawnAmmount(int ammount)
@@ -37,4 +44,11 @@ public class platformSpawn : MonoBehaviour {
     {
         terrain = obj;
     }
+
+	public void SetPickup(GameObject newPickup)
+	{
+		pickup = newPickup;
+		isPickup = true;
+	}
+
 }
