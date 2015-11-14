@@ -4,6 +4,8 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public Animator anim;
+    public GameObject particles;
+    bool falling = false;
 	// Use this for initialization
 	void Start () {
 
@@ -23,9 +25,15 @@ public class Player : MonoBehaviour {
 		} else if (GetComponent<Rigidbody2D> ().velocity.y < 0) {
 			anim.SetBool ("Jumping", false);
 			anim.SetBool ("Falling", true);
+            falling = true;
 		} else {
 			anim.SetBool ("Jumping", false);
 			anim.SetBool ("Falling", false);
+            if (falling)
+            {
+                particles.GetComponent<Particles>().Emit(5);
+                falling = false;
+            }
 		}
 		
 	}
