@@ -22,7 +22,7 @@ public class TextLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		int num = Random.Range (1, 11);
+		int num = Random.Range (1, 12);
 
 		if (num == 1) {
 			content.text = beeText.text;

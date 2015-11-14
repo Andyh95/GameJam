@@ -15,7 +15,7 @@ public class LoadLevel : MonoBehaviour {
 
 	public void OnClickPlay()
 	{
-		Application.LoadLevel ("GameOver");
+		Application.LoadLevel ("Game");
 		print ("level changed");
 	}
 }
