@@ -2,20 +2,22 @@
 using System.Collections;
 
 public class ScrollingBackground : MonoBehaviour {
-
-
+	public GameObject background;
+	public int speed;
+	public float backgroundCooldown = 30.0f;
 		
 	void Update()
 	{
-		MeshRenderer mr = GetComponent<MeshRenderer> ();
-			
-		Material mat = mr.material;
-			
-		Vector2 offset = mat.mainTextureOffset;
-			
-		offset.x += Time.deltaTime / 10f;
-			
-		mat.mainTextureOffset = offset;
+		backgroundCooldown--;
+		if (backgroundCooldown <= 0) {
+			Instantiate (background, new Vector3 (26.12f, 0.57f, 10f), transform.rotation);
+			backgroundCooldown = 30.0f;
+		}
+			if(transform.position.x < -50.0f){
+				Destroy(this.gameObject);
+			}
+			transform.position -= new Vector3(speed,0.0f,0.0f);
+		}
 	}
 
-}
+
