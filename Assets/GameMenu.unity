@@ -211,7 +211,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 354, y: 250}
+  m_AnchoredPosition: {x: 354, y: 220}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &134351172
@@ -543,6 +543,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepCooldown: 5
   gameSoundOn: 1
+  volumeSlider: {fileID: 1063859141}
+  gameSoundVolume: 1
   footstep: {fileID: 8300000, guid: 0541e937296f6ec4dbc5aa494fa6dd97, type: 3}
   footstepPitch: 1
 --- !u!82 &711244937
@@ -645,8 +647,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -2.44379044e-06, y: 0}
-  m_SizeDelta: {x: 757, y: 535}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 758, y: 474}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &932778420
 MonoBehaviour:
@@ -940,7 +942,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 250, y: 220}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1098132413
