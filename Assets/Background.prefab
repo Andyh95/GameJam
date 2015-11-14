@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 409466}
   - 23: {fileID: 2341744}
   - 33: {fileID: 3390796}
-  - 114: {fileID: 11433892}
+  - 114: {fileID: 11438188}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -61,7 +61,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172662}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11433892
+--- !u!114 &11438188
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -72,13 +72,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7cee8b1b35fc84bad4cd48995e63d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 172662}
+  speed: 5
+  backgroundCooldown: 30
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 172662}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172662}
