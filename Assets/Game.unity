@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 296840931}
+  particles: {fileID: 0}
   cat: {fileID: 523107762}
 --- !u!61 &296840935
 BoxCollider2D:

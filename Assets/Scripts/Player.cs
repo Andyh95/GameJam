@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		SoundScript sound = FindObjectOfType<SoundScript> ();
+
 
 		if (Input.GetButton("Fire1")) {
 			anim.SetTrigger("Jump");
@@ -27,20 +27,20 @@ public class Player : MonoBehaviour {
 		if (GetComponent<Rigidbody2D> ().velocity.y > 0) {
 			anim.SetBool ("Jumping", true);
 			anim.SetBool ("Falling", false);
-			sound.IsJumpingSetter(true);
+
 		} else if (GetComponent<Rigidbody2D> ().velocity.y < 0) {
 			anim.SetBool ("Jumping", false);
 			anim.SetBool ("Falling", true);
 			falling = true;
-			sound.IsJumpingSetter(true);
+		
 		} else {
 			anim.SetBool ("Jumping", false);
 			anim.SetBool ("Falling", false);
-			sound.IsJumpingSetter(false);
+
 			if (falling)
 			{
-				particles.GetComponent<Particles>().Emit(5);
-				falling = false;
+				//particles.GetComponent<Particles>().Emit(5);
+				//falling = false;
 			}
 		}
 
