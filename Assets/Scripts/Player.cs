@@ -4,6 +4,8 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public Animator anim;
+	public GameObject particles;
+    	bool falling = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +16,7 @@ public class Player : MonoBehaviour {
 	void Update () {
 		SoundScript sound = FindObjectOfType<SoundScript>();
 
-		if (Input.GetKeyUp (KeyCode.Space)) {
+		if (Input.GetButton("Fire1")) {
 			anim.SetTrigger("Jump");
 			//transform.position += new Vector3(0,2.0f,0);
 			GetComponent<Rigidbody2D>().velocity = new Vector2 (0.0f,5.0f);
@@ -34,6 +36,11 @@ public class Player : MonoBehaviour {
 			anim.SetBool ("Jumping", false);
 			anim.SetBool ("Falling", false);
 			sound.IsJumpingSetter(false);
+			if (falling)
+            		{
+        		  particles.GetComponent<Particles>().Emit(5);
+        		  falling = false;
+        		 }
 		}
 		
 	}
