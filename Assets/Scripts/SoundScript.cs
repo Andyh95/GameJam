@@ -103,31 +103,34 @@ public class SoundScript : MonoBehaviour {
 		if (meowCooldown <= 0.0f) {
 			int meowPicker = Random.Range (0, 6);
 
-			switch (meowPicker) {
-			case 0:
-				meowSource.clip = meow00;
-				meowSource.PlayOneShot (meow00, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
-				break;
-			case 1:
-				meowSource.clip = meow01;
-				meowSource.PlayOneShot (meow01, (Random.Range (0.3f, 0.5f) * gameSoundVolume));
-				break;
-			case 2:
-				meowSource.clip = meow02;
-				meowSource.PlayOneShot (meow02, (Random.Range (0.4f, 0.75f) * gameSoundVolume));
-				break;
-			case 3:
-				meowSource.clip = meow03;
-				meowSource.PlayOneShot (meow03, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
-				break;
-			case 4:
-				meowSource.clip = meow04;
-				meowSource.PlayOneShot (meow04, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
-				break;
-			case 5:
-				meowSource.clip = meow05;
-				meowSource.PlayOneShot (meow05, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
-				break;
+			if (gameSoundOn)
+			{
+				switch (meowPicker) {
+				case 0:
+					meowSource.clip = meow00;
+					meowSource.PlayOneShot (meow00, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
+					break;
+				case 1:
+					meowSource.clip = meow01;
+					meowSource.PlayOneShot (meow01, (Random.Range (0.3f, 0.5f) * gameSoundVolume));
+					break;
+				case 2:
+					meowSource.clip = meow02;
+					meowSource.PlayOneShot (meow02, (Random.Range (0.4f, 0.75f) * gameSoundVolume));
+					break;
+				case 3:
+					meowSource.clip = meow03;
+					meowSource.PlayOneShot (meow03, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
+					break;
+				case 4:
+					meowSource.clip = meow04;
+					meowSource.PlayOneShot (meow04, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
+					break;
+				case 5:
+					meowSource.clip = meow05;
+					meowSource.PlayOneShot (meow05, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
+					break;
+				}
 			}
 
 			meowCooldown = Random.Range (300.0f, 380.0f);
