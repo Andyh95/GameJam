@@ -13,6 +13,18 @@ public class GameManager : MonoBehaviour {
 	public float backgroundGenCooldown3;
 	public GameObject background3;
 	public float platformCooldown;
+
+	public float goodCooldown;
+	public float badCooldown;
+
+	public GameObject clover;
+	public GameObject coin;
+
+	public GameObject ladder;
+	public GameObject mirror;
+
+
+
 	// Use this for initialization
 	void Start () {
 		terrainGenCooldown = 0.5f;
@@ -20,6 +32,9 @@ public class GameManager : MonoBehaviour {
 		backgroundGenCooldown2 = 0.0f;
 		backgroundGenCooldown3 = 0.0f;
 		platformCooldown = 60.0f;
+		goodCooldown = 200.0f;
+		badCooldown = 200.0f;
+
 	}
 	
 	// Update is called once per frame
@@ -29,6 +44,9 @@ public class GameManager : MonoBehaviour {
 		backgroundGenCooldown1--;
 		backgroundGenCooldown2--;
 		backgroundGenCooldown3--;
+		goodCooldown--;
+		badCooldown--;
+
 		if (terrainGenCooldown <= 0) {
 			Instantiate (terrain, new Vector3 (11.5f, -4.5f, 0),transform.rotation);
 			terrainGenCooldown = 24f;
@@ -43,6 +61,34 @@ public class GameManager : MonoBehaviour {
             platform.GetComponent<platformSpawn>().SetSpawnAmmount(spawnLength);
             platform.GetComponent<platformSpawn>().SetObject(terrain);
 			platformCooldown = 60.0f;
+			if (goodCooldown <= 0)
+			{
+				int num = Random.Range(0,2);
+				if(num == 0)
+				{
+					platform.GetComponent<platformSpawn>().SetPickup(clover);
+					goodCooldown = 200.0f;
+				}
+				if(num == 1)
+				{
+					platform.GetComponent<platformSpawn>().SetPickup(coin);
+					goodCooldown = 200.0f;
+				}
+			}
+			else if(badCooldown <= 0)
+			{
+				int num = Random.Range (0,2);
+				if(num == 0)
+				{
+					platform.GetComponent<platformSpawn>().SetPickup(ladder);
+					badCooldown = 200.0f;
+				}
+				if(num == 1)
+				{
+					platform.GetComponent<platformSpawn>().SetPickup(mirror);
+					badCooldown = 200.0f;
+				}
+			}
 		}
 		if (backgroundGenCooldown1 <= 0) {
 			Instantiate(background1, new Vector3(26.08f,0.57f,10),transform.rotation);
@@ -55,6 +101,7 @@ public class GameManager : MonoBehaviour {
 			backgroundGenCooldown3 = 240.0f;
 		}
 
+	
 
 	}
 			
