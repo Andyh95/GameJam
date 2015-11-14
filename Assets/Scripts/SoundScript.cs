@@ -31,6 +31,26 @@ public class SoundScript : MonoBehaviour {
 	AudioSource meowSource;
 	// Time Interval between the meow sound
 	public float meowCooldown = 100.0f;
+
+	// Coin pick up initialisation
+	// This allow insert of the coin audios and source them
+	public AudioClip coinPickUp;
+	AudioSource coinPickUpSource;
+
+	// Ladder pick up initialisation
+	// This allow insert of the ladder audios and source them
+	public AudioClip ladderPickUp;
+	AudioSource ladderPickUpSource;
+
+	// Clover pick up initialisation
+	// This allow insert of the clover audios and source them
+	public AudioClip cloverPickUp;
+	AudioSource cloverPickUpSource;
+
+	// Mirror pick up initialisation
+	// This allow insert of the mirror audios and source them
+	public AudioClip mirrorPickUp;
+	AudioSource mirrorPickUpSource;
 	
 	// This turn the sound on/off on function call
 	public void SoundToggle()
@@ -42,7 +62,10 @@ public class SoundScript : MonoBehaviour {
 	void Start () {
 		footstepSource = GetComponent<AudioSource>();
 		meowSource = GetComponent <AudioSource>();
-	
+		coinPickUpSource = GetComponent <AudioSource> ();
+		ladderPickUpSource = GetComponent <AudioSource> ();
+		cloverPickUpSource = GetComponent <AudioSource> ();
+		mirrorPickUpSource = GetComponent <AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -86,6 +109,7 @@ public class SoundScript : MonoBehaviour {
 			{
 				// This play back the footstep audio once with a randomised volume that are multiplied by the gameSoundVolume setting
 				footstepSource.PlayOneShot (footstep, (Random.Range (0.5f, 1.0f) * gameSoundVolume));
+
 			}
 			// This set the current pitch as medium for the next play back
 			footstepPitch = footstepSource.pitch;
@@ -144,5 +168,37 @@ public class SoundScript : MonoBehaviour {
 	public void IsJumpingSetter(bool setter)
 	{
 		isJumping = setter;
+	}
+
+	public void CoinPickUp()
+	{
+		if (gameSoundOn) {
+			// This is called when player collide with a coin pick up to play a sound
+			coinPickUpSource.PlayOneShot (coinPickUp, (Random.Range (0.75f, 1.0f) * gameSoundVolume));
+		}
+	}
+
+	public void LadderPickUp()
+	{
+		if (gameSoundOn) {
+			// This is called when player collide with a ladder pick up to play a sound
+			ladderPickUpSource.PlayOneShot (ladderPickUp, (Random.Range (0.75f, 1.0f) * gameSoundVolume));
+		}
+	}
+
+	public void CloverPickUp()
+	{
+		if (gameSoundOn) {
+			// This is called when player collide with a clover pick up to play a sound
+			cloverPickUpSource.PlayOneShot (cloverPickUp, (Random.Range (0.75f, 1.0f) * gameSoundVolume));
+		}
+	}
+
+	public void MirrorPickUp()
+	{
+		if (gameSoundOn) {
+			// This is called when player collide with a mirror pick up to play a sound
+			mirrorPickUpSource.PlayOneShot (mirrorPickUp, (Random.Range (0.75f, 1.0f) * gameSoundVolume));
+		}
 	}
 }

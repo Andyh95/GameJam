@@ -47,13 +47,25 @@ public class Player : MonoBehaviour {
 	}
 
 	void  OnTriggerEnter2D(Collider2D coll){
+		SoundScript sound = FindObjectOfType<SoundScript> ();
+
 		if (coll.name == "catRun") {
 			Application.LoadLevel ("WinScreen");
 		}
-		if (coll.name == "Clover (1)(Clone)" || coll.name == "coin 1(Clone)") {
-			cat.GetComponent<Cat> ().decreaseDistance();
-		} else {
+		if (coll.name == "Clover (1)(Clone)") {
+			cat.GetComponent<Cat> ().decreaseDistance ();
+			sound.CloverPickUp();
+		} if (coll.name == "coin 1(Clone)"){
+			cat.GetComponent<Cat> ().decreaseDistance ();
+			sound.CoinPickUp();
+		}
+
+		 if(coll.name == "Ladder(Clone)")  {
 			cat.GetComponent<Cat> ().increaseDistance();
+			sound.LadderPickUp();
+		} if(coll.name == "Mirror(Clone)"){
+			cat.GetComponent<Cat> ().increaseDistance();
+			sound.MirrorPickUp();
 		}
 		Debug.Log ("collided with " + coll.name);
 	}
