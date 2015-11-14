@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 	public Animator anim;
     public GameObject particles;
     bool falling = false;
+
+	public GameObject cat;
 	// Use this for initialization
 	void Start () {
 
@@ -15,7 +17,7 @@ public class Player : MonoBehaviour {
 	void Update () {
 		SoundScript sound = FindObjectOfType<SoundScript> ();
 
-		if (Input.GetKeyUp (KeyCode.Space)) {
+		if (Input.GetButton("Fire1")) {
 			anim.SetTrigger("Jump");
 			//transform.position += new Vector3(0,2.0f,0);
 			GetComponent<Rigidbody2D>().velocity = new Vector2 (0.0f,5.0f);
@@ -41,7 +43,18 @@ public class Player : MonoBehaviour {
                 falling = false;
             }
 		}
-		
+			
 	}
 
+	void  OnTriggerEnter2D(Collider2D coll){
+		if (coll.name == "catRun") {
+			Application.LoadLevel ("WinScreen");
+		}
+		if (coll.name == "Clover (1)(Clone)" || coll.name == "coin 1(Clone)") {
+			cat.GetComponent<Cat> ().decreaseDistance();
+		} else {
+			cat.GetComponent<Cat> ().increaseDistance();
+		}
+		Debug.Log ("collided with " + coll.name);
+	}
 }
